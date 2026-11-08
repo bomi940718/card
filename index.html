@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>백보미 | 미유헌종합건축사사무소</title>
+<meta name="description" content="대표 건축사 백보미. 연락처를 저장하거나 바로 연락할 수 있습니다.">
+<meta property="og:title" content="백보미 | 미유헌종합건축사사무소">
+<meta property="og:description" content="대표 건축사. 연락처를 저장하거나 바로 연락할 수 있습니다.">
+<meta property="og:type" content="profile">
+<meta property="og:image" content="https://bomi940718.github.io/card/seal.png">
+<link rel="icon" href="seal.png">
+<link rel="apple-touch-icon" href="seal.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F0ECE3;
+    --ink:#272320;
+    --ink-soft:#6E665A;
+    --rule:#D9D2C5;
+    --seal:#C4301C;
+    --kr:"Noto Serif KR","AppleMyungjo","Nanum Myeongjo",serif;
+    --la:"EB Garamond","Times New Roman",serif;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    min-height:100vh;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--kr);
+    font-weight:400;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    position:relative;
+  }
+
+  /* Cotton-paper grain, echoing the printed card stock */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .sheet{
+    position:relative;
+    max-width:23rem;
+    margin:0 auto;
+    padding:clamp(2.5rem,9vh,4rem) 1.75rem clamp(3rem,8vh,4.5rem);
+  }
+
+  /* ── Mark ───────────────────────────────── */
+  .mark{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .mark__hanja{
+    writing-mode:vertical-rl;
+    text-orientation:upright;
+    font-weight:200;
+    font-size:clamp(2.9rem,13vw,3.6rem);
+    letter-spacing:.11em;
+    line-height:1;
+    /* Vertical em boxes sit right of the glyph ink; pull back to optical centre */
+    margin:0 .21em 0 0;
+  }
+
+  .mark__roman{
+    margin:1.15rem 0 0;
+    font-family:var(--la);
+    font-size:.92rem;
+    letter-spacing:.3em;
+    text-indent:.15em;
+    color:var(--ink-soft);
+  }
+
+  .seal{
+    margin-top:1.4rem;
+    width:3.2rem;
+    height:auto;
+    display:block;
+    transform:rotate(-1.5deg);
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .seal{animation:stamp .5s cubic-bezier(.17,.84,.44,1) both;}
+  }
+  @keyframes stamp{
+    from{opacity:0;transform:rotate(-7deg) scale(1.22);}
+    to{opacity:1;transform:rotate(-1.5deg) scale(1);}
+  }
+
+  hr{
+    border:0;
+    border-top:1px solid var(--rule);
+    margin:clamp(2.2rem,6vh,3rem) 0;
+  }
+
+  /* ── Name ───────────────────────────────── */
+  .name{
+    display:flex;
+    align-items:flex-start;
+    gap:1.25rem;
+  }
+
+  .name__kr{
+    writing-mode:vertical-rl;
+    text-orientation:upright;
+    font-size:1.45rem;
+    font-weight:400;
+    letter-spacing:.34em;
+    line-height:1;
+    margin:0;
+    padding-top:.15rem;
+  }
+
+  .name__roman{
+    font-family:var(--la);
+    font-size:1.4rem;
+    letter-spacing:.02em;
+    line-height:1.2;
+    margin:0 0 .85rem;
+  }
+
+  .name__role{
+    margin:0;
+    font-size:.93rem;
+    line-height:1.85;
+    color:var(--ink-soft);
+  }
+
+  .name__role span{
+    font-family:var(--la);
+  }
+
+  /* ── Save ───────────────────────────────── */
+  .save{
+    display:block;
+    margin-top:clamp(2.2rem,6vh,2.9rem);
+    padding:.95rem;
+    border-radius:2px;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--kr);
+    font-size:1rem;
+    letter-spacing:.14em;
+    text-indent:.07em;
+    text-align:center;
+    text-decoration:none;
+    transition:background .18s ease;
+  }
+  .save:hover,.save:focus-visible{background:var(--seal);}
+
+  .save__note{
+    margin:.7rem 0 0;
+    font-size:.78rem;
+    line-height:1.6;
+    text-align:center;
+    color:var(--ink-soft);
+  }
+  .save__note[hidden]{display:none;}
+
+  /* ── Details ────────────────────────────── */
+  .details{
+    margin:clamp(2.2rem,6vh,2.9rem) 0 0;
+    display:grid;
+    grid-template-columns:2.6rem 1fr;
+    gap:.72rem 0;
+    font-size:.95rem;
+  }
+
+  .details dt{
+    font-family:var(--la);
+    color:var(--ink-soft);
+    font-size:.88rem;
+  }
+
+  .details dd{
+    margin:0;
+    overflow-wrap:anywhere;
+  }
+
+  .details a{
+    color:inherit;
+    text-decoration:underline;
+    text-decoration-color:var(--rule);
+    text-decoration-thickness:1px;
+    text-underline-offset:.25em;
+  }
+  .details a:hover,.details a:focus-visible{text-decoration-color:var(--seal);}
+
+  .num{font-family:var(--la);letter-spacing:.03em;}
+
+  :focus-visible{outline:2px solid var(--seal);outline-offset:3px;}
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <div class="mark">
+    <p class="mark__hanja">美留軒</p>
+    <p class="mark__roman">Mi You Hun</p>
+    <img class="seal" src="seal.png" width="300" height="287" alt="미유헌 인장">
+  </div>
+
+  <hr>
+
+  <div class="name">
+    <h1 class="name__kr">백보미</h1>
+    <div>
+      <p class="name__roman">Baek Bomi</p>
+      <p class="name__role">
+        대표 &nbsp;|&nbsp; 건축사<br>
+        <span>CEO &nbsp;|&nbsp; Architect.</span>
+      </p>
+    </div>
+  </div>
+
+  <a class="save" href="miyouhun.vcf">연락처 저장</a>
+  <p class="save__note" id="note" hidden>다운로드가 끝나면 파일을 한 번 눌러주세요.</p>
+
+  <dl class="details">
+    <dt>Cel.</dt>
+    <dd><a class="num" href="tel:+821085120546">010. 8512. 0546</a></dd>
+
+    <dt>Fax.</dt>
+    <dd class="num">0504. 216. 6642</dd>
+
+    <dt>E.</dt>
+    <dd><a href="mailto:bomi940718@gmail.com">bomi940718@gmail.com</a></dd>
+
+    <dt>Talk.</dt>
+    <dd><a href="http://pf.kakao.com/_WYxgsX">미유헌건축</a></dd>
+
+    <dt>IG.</dt>
+    <dd><a href="https://www.instagram.com/miyouhun">Miyouhun</a></dd>
+
+    <dt>A.</dt>
+    <dd>경기도 안양시 동안구<br>시민대로 181, 1026호</dd>
+  </dl>
+
+</main>
+
+<script>
+  // Android downloads the vCard instead of opening it — say so, there only.
+  if (/Android/i.test(navigator.userAgent)) {
+    document.getElementById('note').hidden = false;
+  }
+</script>
+</body>
+</html>
